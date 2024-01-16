@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 interface Color {
-  id: number;
+  id: string;
   color: string; // Hex color code
   varName: string; // CSS variable name
 }
