@@ -7,9 +7,17 @@ const PicturesList: React.FC = () => {
 
   useEffect(() => {
     const s3 = new AWS.S3();
+    const bucketName = process.env.REACT_APP_AWS_BUCKET_NAME;
+
+    if (!bucketName) {
+      console.error(
+        'REACT_APP_AWS_BUCKET_NAME is not defined in the environment variables.'
+      );
+      return;
+    }
     const params = {
-      Bucket: 'YOUR_BUCKET_NAME',
-      Prefix: 'YOUR_FOLDER_PATH/',
+      Bucket: bucketName,
+      Prefix: 'gipper-static-assets/stock_images',
     };
 
     s3.listObjectsV2(params, (err, data) => {
