@@ -2,17 +2,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './components/Main/MainPage';
-import IconsList from './components/Icons/IconsList';
-import PicturesList from './components/Pictures/PicturesList';
-import ColorsList from './components/Colors/ColorsList';
+import Gallery from './components/Gallery/Gallery';
+import Icons from './components/Icon/Icons';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/icons" element={<IconsList />} />
-        <Route path="/pictures" element={<PicturesList />} />
-        <Route path="/colors" element={<ColorsList />} /> */}
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/icons" element={<Icons />} />
+
         <Route path="/" element={<MainPage />} />
       </Routes>
     </Router>
